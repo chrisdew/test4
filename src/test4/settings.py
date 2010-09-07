@@ -2,6 +2,7 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+AUTH_PROFILE_MODULE = 'test4.dew.UserProfile'
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -90,5 +91,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'test4.dew',
 )
