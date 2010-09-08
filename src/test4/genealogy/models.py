@@ -18,6 +18,8 @@ class Person(models.Model):
     mother = models.ForeignKey("Person", related_name="mothered", blank=True, null=True)
     father = models.ForeignKey("Person", related_name="fathered", blank=True, null=True)
     
+    notes = models.TextField(blank=True)
+    
     def __unicode__(self):
         return self.first_name + " " + self.surname_at_birth # + " (" + str(self.date_of_birth) + ")"
     
@@ -27,7 +29,7 @@ class Person(models.Model):
 class Marriage(models.Model):
     husband = models.ForeignKey(Person, related_name="husband_of")
     wife = models.ForeignKey(Person, related_name="wife_of")
-    date_of_marriage = models.DateField(blank=True)
+    date_of_marriage = models.DateField(blank=True, null=True)
     
     def __unicode__(self):
         return "marriage of " + self.husband.first_name + " " + self.husband.surname_at_birth + " to " + self.wife.first_name + " " + self.wife.surname_at_birth
