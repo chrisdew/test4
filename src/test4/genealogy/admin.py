@@ -1,8 +1,8 @@
-import test4.dew.models as models
+import test4.genealogy.models as models
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from test4.dew.models import UserProfile
+from test4.genealogy.models import UserProfile
  
 admin.site.unregister(User)
  
